@@ -41,7 +41,7 @@ public class Employee extends Person {
     }
 
     // Implementation of the getPaymentAmount method from the Payable interface
-    public double getPaymentAmount() {
+    public double getPayment() {
         return salary; // Return the salary as the payment amount
     }
 
