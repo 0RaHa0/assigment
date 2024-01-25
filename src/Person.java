@@ -1,44 +1,68 @@
-public class Person implements Payable , Comparable<Person> {
-    private static int nextId = 1;
-    private int id;
+public class Person implements Payable, Comparable<Person> {
+    private static int nextId = 1; // Static variable to manage unique IDs across instances
+    private int id; // Unique identifier for each person
     private String name;
     private String surename;
-    public Person(){
-        this.id = nextId++;
+
+    // Default constructor
+    public Person() {
+        this.id = nextId++; // Assign a unique ID to each new instance
     }
-    public Person(String surname, String name){
-        this();
+
+    // Parameterized constructor
+    public Person(String surname, String name) {
+        this(); // Call the default constructor to set the unique ID
         this.name = name;
         this.surename = surname;
     }
+
+    // Getter for the ID field
     public int getId() {
         return id;
     }
-    public String getName(){
+
+    // Getter for the name field
+    public String getName() {
         return name;
     }
-    public void setName (String name){
-        this.name=name;
+
+    // Setter for the name field
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getSurename(){
+
+    // Getter for the surename field
+    public String getSurename() {
         return surename;
     }
-    public void setSurename(String surename){
+
+    // Setter for the surename field
+    public void setSurename(String surename) {
         this.surename = surename;
     }
+
+    // Override the toString method to provide a custom string representation
     @Override
-    public String toString(){
-        return id +") "+surename+" "+name;
+    public String toString() {
+        return id + ") " + surename + " " + name;
     }
+
+    // Implementation of the getPayment method from the Payable interface
     @Override
     public double getPayment() {
-        return 0.0;
+        return 0.0; // Default payment is zero for a generic person
     }
-    public String getPosition(){
-        return "Student";
+
+    // Implementation of the getPosition method from the Payable interface
+    @Override
+    public String getPosition() {
+        return "Student"; // Default position is "Student" for a generic person
     }
+
+    // Implementation of the compareTo method for sorting based on ID
     @Override
     public int compareTo(Person other) {
         return Integer.compare(this.id, other.id);
     }
 }
+
