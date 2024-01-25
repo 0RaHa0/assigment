@@ -62,7 +62,7 @@ public class Person implements Payable, Comparable<Person> {
     // Implementation of the compareTo method for sorting based on ID
     @Override
     public int compareTo(Person other) {
-        return Integer.compare(this.id, other.id);
+        return Double.compare(this.getPayment(), other.getPayment());
     }
 }
 
