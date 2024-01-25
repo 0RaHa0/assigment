@@ -17,4 +17,20 @@ public class Student extends Person{
     public String toString(){
         return "Student: "+super.toString();
     }
+    @Override
+    public double getPayment() {
+        if (gpa > 2.67) {
+            return 36660.00;
+        } else {
+            return 0.00;
+        }
+    }
+    @Override
+    public String getPosition() {
+        if (gpa > 2.67) {
+            return "Student with Stipend";
+        } else {
+            return super.getPosition();
+        }
+    }
 }

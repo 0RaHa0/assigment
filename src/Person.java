@@ -1,4 +1,4 @@
-public class Person {
+public class Person implements Payable {
     private static int nextId = 1;
     private int id;
     private String name;
@@ -29,5 +29,12 @@ public class Person {
     @Override
     public String toString(){
         return id +") "+surename+" "+name;
+    }
+    @Override
+    public double getPayment() {
+        return 0.0;
+    }
+    public String getPosition(){
+        return "Student";
     }
 }
