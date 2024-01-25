@@ -33,4 +33,11 @@ public class Student extends Person{
             return super.getPosition();
         }
     }
+    @Override
+    public int compareTo(Person other) {
+        if (other instanceof Student) {
+            return Double.compare(this.gpa, ((Student) other).gpa);
+        }
+        return super.compareTo(other);
+    }
 }

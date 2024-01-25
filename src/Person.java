@@ -1,4 +1,4 @@
-public class Person implements Payable {
+public class Person implements Payable , Comparable<Person> {
     private static int nextId = 1;
     private int id;
     private String name;
@@ -36,5 +36,9 @@ public class Person implements Payable {
     }
     public String getPosition(){
         return "Student";
+    }
+    @Override
+    public int compareTo(Person other) {
+        return Integer.compare(this.id, other.id);
     }
 }

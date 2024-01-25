@@ -28,4 +28,11 @@ public class Employee extends Person{
     public double getPaymentAmount() {
         return salary;
     }
+    @Override
+    public int compareTo(Person other) {
+        if (other instanceof Employee) {
+            return Double.compare(this.salary, ((Employee) other).salary);
+        }
+        return super.compareTo(other);
+    }
 }
